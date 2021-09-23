@@ -1,5 +1,5 @@
 # modsim_3c_project1
-We will explain the reasons and effects of a second wave of influenza. This interests us because it can show the real world effects of human attitudes and actions regarding the spread of the virus. This would interest scientists, specifically epidemiologists and psychologists. 
+We will explain the reasons and effects of a second wave of influenza. This interests us because it can show the real world effects of human attitudes and actions regarding the spread of the virus. This would interest scientists, specifically epidemiologists and sociologists. 
 
 We expect to produce a graph with multiple peaks, decreasing in magnitude over time.
 
