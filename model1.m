@@ -7,15 +7,15 @@ tab_data_validate = readtable("wave1.csv", "Delimiter", ",");
 tab_data_wave2 = readtable("wave2.csv", "Delimiter", ",");
 
 % Configure the simulation
-beta = 1 /87; % Infection rate (New / Susceptible / Infected / day)
-gamma = 10 / 19; % Recovery rate (1 / day)
-rho = 1/19.5;  % reinfection rate 
+beta = 1 /90; % Infection rate (New / Susceptible / Infected / day)
+gamma = 1 / 2; % Recovery rate (1 / day)
+rho = 1/60;  % reinfection rate 
 i_0 = 2;       % Initial count of infected persons
 s_0 = 100 - i_0;
 r_0 = 0;
 
 % Run simulation
-[S_long, I_long, R_long, W_long] = sir_simulate_v3(s_0, i_0, r_0, beta, gamma, rho, 100);
+[S_long, I_long, R_long, W_long] = sir_simulate_v3(s_0, i_0, r_0, beta, gamma, rho, 200);
 
 % Plot the fitted simulation
 figure(3); clf; hold on;
