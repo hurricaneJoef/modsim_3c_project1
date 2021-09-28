@@ -1,4 +1,4 @@
-function [S, I, R, W] = sir_simulate_v3(s_0, i_0, r_0, beta, gamma,rho, num_steps)
+function [S, I, R, W] = sir_simulate_v3(s_0, i_0, r_0, beta, gamma, rho, num_steps)
 % fcn_simulate Simulate a SIR model
 %
 % Usage
