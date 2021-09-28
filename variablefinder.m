@@ -24,23 +24,23 @@ rmselast = 10000
 
 %lastrho =0.1429
 dataall = cat(1,tab_data_validate,tab_data_wave2)
-
-for beta = 1./(30:170)
+z = zeros(max(size(dataall.W)));
+for beta = 1./(50:.5:130)
 % Run simulation
-    for gamma = 1./(.9:.05:5.5)
-        for rho = 1./(1:100)
+    for gamma = 1./(1.2:.05:2.9)
+        for rho = 1./(1:.5:100)
 
-            [S_long, I_long, R_long, W_long] = sir_simulate_v3(s_0, i_0, r_0, beta, gamma, rho, 200);
+            [S_long, I_long, R_long, W_long] = sir_simulate_v3(s_0, i_0, r_0, beta, gamma, rho, max(dataall.W));
             o=1;
-            z = zeros(max(size(dataall.W)));
             idatacomp=z(1,:);
-            for wi = 1:max(size(dataall.W))
+            for wi = 1:max(size(dataall.W));
                 w=dataall.W(wi);
                 idatacomp(o)=I_long(w);
                 o=o+1;
                 %eval output
             end
-            rmse = sqrt(mean(mean((dataall.I-idatacomp).^2)))
+            deltai = (dataall.I-idatacomp')
+            rmse = sqrt(mean(  (deltai).^2 )  )
             if(rmse<rmselast)
                 rmselast  = rmse
                 lastbeta  = beta;
@@ -55,9 +55,9 @@ for beta = 1./(30:170)
 figure(3); clf; hold on;
 [S_long, I_long, R_long, W_long] = sir_simulate_v3(s_0, i_0, r_0, lastbeta, lastgamma, lastrho, 200)
 rmselast
-lastbeta
-lastgamma
-lastrho
+1/lastbeta
+1/lastgamma
+1/lastrho
 %{
 o=1
 z = zeros(max(size(dataall.W)))
