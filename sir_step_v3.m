@@ -23,12 +23,12 @@ recovered = gamma * i;
 resusceptible = rho *  r;
 % Enforce invariants
 total = s + i + r;
-infected = min(s, infected);           % Cannot infect more people than current s
-infected = min(total - i, infected);   % Cannot infect more than total
-recovered = min(i, recovered);         % Cannot recover more people than current i
-recovered = min(total - r, recovered); % Cannot recover more than total
-resusceptible= min(r, resusceptible);
-resusceptible= min(total-s, resusceptible);
+infected = min(s, infected);                % Cannot infect more people than current s
+infected = min(total - i, infected);        % Cannot infect more than total
+recovered = min(i, recovered);              % Cannot recover more people than current i
+recovered = min(total - r, recovered);      % Cannot recover more than total
+resusceptible= min(r, resusceptible);       % Cannot recover more people than current r
+resusceptible= min(total-s, resusceptible); % Cannot recover more than total
 % Update state
 s_n = s + resusceptible - infected;
 i_n = i + infected - recovered;
