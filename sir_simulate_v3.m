@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 function [S, I, R, W] = sir_simulate_v3(s_0, i_0, r_0, beta, gamma, rho, num_steps)
+=======
+function [S, I, R, W] = sir_simulate_v3(s_0, i_0, r_0, beta, gamma,rho, num_steps)
+>>>>>>> 7d0aad264de5fe4034f2b522b84e1b16ba8ac4cf
 % fcn_simulate Simulate a SIR model
 %
 % Usage
