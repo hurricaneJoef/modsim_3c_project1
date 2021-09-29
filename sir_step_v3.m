@@ -11,6 +11,7 @@ function [s_n, i_n, r_n] = sir_step_v3(s, i, r, beta, gamma, rho)
 %   
 %   beta = infection rate parameter
 %   gamma = recovery rate paramter
+%   rho = reinfection rate paramtr
 % 
 % Returns
 %   s_n = next number of susceptible individuals
