@@ -39,7 +39,7 @@ infected = min(s, infected);           % Cannot infect more people than current 
 infected = min(total - i, infected);   % Cannot infect more than total
 recovered = min(i, recovered);         % Cannot recover more people than current i
 recovered = min(total - r, recovered); % Cannot recover more than total
-resusceptible= min(i, resusceptible);
+resusceptible= min(r, resusceptible);
 resusceptible= min(total-s, resusceptible);
 >>>>>>> 7d0aad264de5fe4034f2b522b84e1b16ba8ac4cf
 % Update state
