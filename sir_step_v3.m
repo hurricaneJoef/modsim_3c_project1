@@ -11,10 +11,7 @@ function [s_n, i_n, r_n] = sir_step_v3(s, i, r, beta, gamma, rho)
 %   
 %   beta = infection rate parameter
 %   gamma = recovery rate paramter
-<<<<<<< HEAD
 %   rho = reinfection rate paramtr
-=======
->>>>>>> 7d0aad264de5fe4034f2b522b84e1b16ba8ac4cf
 % 
 % Returns
 %   s_n = next number of susceptible individuals
@@ -27,21 +24,13 @@ recovered = gamma * i;
 resusceptible = rho *  r;
 % Enforce invariants
 total = s + i + r;
-<<<<<<< HEAD
 infected = min(s, infected);                % Cannot infect more people than current s
 infected = min(total - i, infected);        % Cannot infect more than total
 recovered = min(i, recovered);              % Cannot recover more people than current i
 recovered = min(total - r, recovered);      % Cannot recover more than total
 resusceptible= min(r, resusceptible);       % Cannot resuccept more people than current r
-resusceptible= min(total-s, resusceptible); % Cannot resuccept more than total
-=======
-infected = min(s, infected);           % Cannot infect more people than current s
-infected = min(total - i, infected);   % Cannot infect more than total
-recovered = min(i, recovered);         % Cannot recover more people than current i
-recovered = min(total - r, recovered); % Cannot recover more than total
-resusceptible= min(r, resusceptible);
-resusceptible= min(total-s, resusceptible);
->>>>>>> 7d0aad264de5fe4034f2b522b84e1b16ba8ac4cf
+resusceptible= min(total - s, resusceptible); % Cannot resuccept more than total
+
 % Update state
 s_n = s + resusceptible - infected;
 i_n = i + infected - recovered;
